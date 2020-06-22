@@ -19,8 +19,6 @@ It looks like this,
 
 ![DDFileChooser Screenshot](/images/ddfilechooser.png)
 
-<img src="https://raw.githubusercontent.com/jazzband/django-silk/master/images/ddfilechooser.png" style="max-width:100%;" width="720px">
-
 
 filereader
 filesystem
@@ -28,11 +26,11 @@ transferables
 https://www.html5rocks.com/en/tutorials/dnd/basics/
 
 ## Setup
-No dependecies. If you have Django, it will run.
+No dependecies.
 
-It's an app so it can use templates.
+Drop the code into your site. 
 
-Drop the code into your site. Then add to the site settings,
+It's an app so it can use templates. Add to the site settings,
 
     INSTALLED_APPS = [
         # added
@@ -43,15 +41,15 @@ Drop the code into your site. Then add to the site settings,
 ## Usage
 Anywhere you have a file upload form field, replace the widget. In admin do a formfield_override,
 
-from ddfilechooser.widgets import DDFileChooser
+    from ddfilechooser.widgets import DDFileChooser
 
 
-class ImageCoreAdmin(admin.ModelAdmin):
-    ...
+    class ImageCoreAdmin(admin.ModelAdmin):
+        ...
 
-    formfield_overrides = {
-        ImageField: {'widget': DDFileChooser},
-    }  
+        formfield_overrides = {
+            ImageField: {'widget': DDFileChooser},
+        }  
 
-## TODO
-It could use some  
+## The end
+Done
