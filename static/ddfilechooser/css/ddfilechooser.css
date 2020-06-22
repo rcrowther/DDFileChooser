@@ -1,5 +1,5 @@
 .filedrop {
-    display: inline-block;
+    display: None;
 }
 
 .filedrop input {
@@ -7,6 +7,7 @@
 }
 
 .filedrop.enabled {
+    display: inline-block;
     font-size: 13px;
     vertical-align: middle;
     padding: 8px 4em;

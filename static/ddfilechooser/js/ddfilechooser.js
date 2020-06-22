@@ -1,5 +1,13 @@
 $(function($) {
 
+    // The trickiest part of this small code is feature detection.
+    // Modernizr  regards File drag and drop as undetectable,
+    // https://github.com/Modernizr/Modernizr/wiki/Undetectables
+    // So we have no chance detecting an ad-hoc backwards 
+    // implementation.
+    // The following methods are a loose collation that should at least
+    // avoid crashes. They may often allow the drop interface to build
+    // when it will not function.
 function isSafari5() {
     return !!navigator.userAgent.match(' Safari/') && !navigator.userAgent.match(' Chrom') && !!navigator.userAgent.match(' Version/5.');
 };

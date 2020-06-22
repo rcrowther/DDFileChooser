@@ -51,5 +51,8 @@ Anywhere you have a file upload form field, replace the widget. In admin do a fo
             ImageField: {'widget': DDFileChooser},
         }  
 
+## Detection
+The trickiest part of this small code is feature detection. [Modernizr](https://modernizr.com)  regards File drag and drop as an [undetectable](https://github.com/Modernizr/Modernizr/wiki/Undetectables). So we have no chance detecting an ad-hoc backwards implementation. The following methods are a loose collation that should at least avoid crashes. They may often allow the drop interface to build when it will not function.
+    
 ## The end
 Done
