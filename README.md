@@ -57,11 +57,12 @@ Firefox 77
 Chrome 83
 
 ### Known issues
-- May build a drop area that is not functional. I've made the detection very general. The alternative is that, perhaps in the future, some robust code will appear that selects compatible browsers, disregarding capable but older browsers.
+- May build a drop area that is not functional
+: I've made the detection very general. The alternative is that, perhaps in the future, some robust code will appear that selects compatible browsers, disregarding capable but older browsers.
 - Safari not supported 
 : Due to non-standard API
 - Drop data does not respect Input[file] attributes 
-: So 'multiple' or 'accept' attributes will not affect a drop e.g. multiple files can be dropped to a single file selector. However, on submit, the input will respect the attributes, and only submit one file (the first) to POST. The reason for no visual fix is that I can't find a reliable FileList constructor/mutation mechanism.
+: So 'multiple' or 'accept' attributes will not affect a drop e.g. multiple files can be dropped to a single file selector. However, on submit, the input will respect the attributes. The reason for no visual fix is that I can't find a reliable FileList constructor/mutation mechanism.
 
 ## The end
 Done
