@@ -1,7 +1,6 @@
 $(function($) {
-
-    // The trickiest part of this small code is feature detection.
-    // Modernizr  regards File drag and drop as undetectable,
+    // The trickiest part of this code is feature detection.
+    // Modernizr  regards file drag and drop as undetectable,
     // https://github.com/Modernizr/Modernizr/wiki/Undetectables
     // So we have no chance detecting an ad-hoc backwards 
     // implementation of input[file] for D&D.
@@ -57,9 +56,9 @@ $(function($) {
         pairs = []
         ds.each(function(idx, drop) {
             fi = $(drop).next('input[type="file"]')
-            fi.css( "background-color", "red" )
             if (fi) {
-                pairs.push([drop, fi]) }
+                pairs.push([drop, fi]) 
+                }
         }); 
         return pairs
     };        
@@ -89,13 +88,16 @@ $(function($) {
             })
             .on('drop', function(e) {
                 var files = e.originalEvent.dataTransfer.files;
-                console.log('files transfer');
-                console.log(files);
                 if (files.length > 0) {
-                    // weird, no?
-                    fi.prop('drop' + files.length);
-                    fi.prop('files', files);
+                    // I can't find any reliable constructor or
+                    // mutation for FileLists, so whatever is in the list
+                    // is written to the Input button, even if the data 
+                    // disrespects Input attributes, such as 'multiple' 
+                    // or 'accept'.
+                    fi.prop('files', files)
                 }
+                // User Agent should fire 'input' and 'change' events, if FileList is mutable,
+                // https://html.spec.whatwg.org/multipage/input.html#concept-input-type-file-selected
             });
         };
     };
