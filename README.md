@@ -13,7 +13,7 @@ Not this one.
 
 There always seemed to be a covert whisper that D&D implementation in a browser was some kind of security hazard. I've heard people say things to that effect. But [times are changing](https://www.w3.org/TR/html52/editing.html#drag-and-drop). And there's a possibility in this. That the old gear will catch up with the new. Actually it's true, it has, though not in the Spec, and erratically supported. Try it. Yes, you can. You can drop a file on a file input element, and in many modern browsers, data will be registered.
 
-No AJAX. No JS.
+No AJAX. No deep reference JS. Stock CSS.
 
 ## What you get
 A box to extend a file input element to make it clear it is droppable, and extend the drop area. With styling to match Django Admin.
@@ -53,8 +53,8 @@ The trickiest part of this code is feature detection. [Modernizr](https://modern
 Please note that a Safari implementation may be possible, but is not included as it involves non-standard-compliant code I am not equipped to write.
 
 #### Works on...
-Firefox 77
-Chrome 83
+- Firefox 77
+- Chrome 83
 
 ### Known issues
 - May build a drop area that is not functional
